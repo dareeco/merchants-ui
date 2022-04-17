@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>
+  Create merchant
+</h1>
+<mat-dialog-content>
+  
+    <mat-form-field appearance="fill" class="first-of-two">
+      <mat-label>Merchant Code</mat-label>
+      <input [formControl]="merchantCodeFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="second-of-two">
+      <mat-label>Phone Number</mat-label>
+      <input [formControl]="phoneNumberFormControl" matInput>
+    </mat-form-field>
+    <br>
+    <small *ngIf="merchantCodeFormControl.invalid && merchantCodeFormControl.touched" class="dangerColor">Merchant Code is required!</small>
+    <mat-form-field appearance="fill" class="over-whole-form">
+      <mat-label>Name</mat-label>
+      <input [formControl]="nameFormControl" matInput>
+    </mat-form-field>
+    <br>
+    <small *ngIf="nameFormControl.invalid && nameFormControl.touched" class="dangerColor">Merchant's name is required!</small>
+    <mat-form-field appearance="fill" class="over-whole-form">
+      <mat-label>Full Name</mat-label>
+      <input [formControl]="fullNameFormControl" matInput>
+    </mat-form-field>
+    <br>
+    <small *ngIf="fullNameFormControl.invalid && fullNameFormControl.touched" class="dangerColor">Merchant's full name is required!</small>
+    <br>
+    <mat-form-field appearance="fill" class="first-of-two">
+      <mat-label>Address</mat-label>
+      <input [formControl]="addressFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="second-of-two">
+      <mat-label>City</mat-label>
+      <input [formControl]="cityFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="first-of-two">
+      <mat-label>Email</mat-label>
+      <input [formControl]="emailFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="second-of-two">
+      <mat-label>Website</mat-label>
+      <input [formControl]="websiteFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="over-whole-form">
+      <mat-label>Account Number</mat-label>
+      <input [formControl]="accountNumberFormControl" matInput>
+    </mat-form-field>
+    <br>
+    <small *ngIf="accountNumberFormControl.invalid && accountNumberFormControl.touched" class="dangerColor">Account Number is required!</small>
+
+</mat-dialog-content>
+
+<mat-card-actions align="end">
+  <button mat-button mat-dialog-close class="backButton" >CLOSE</button> 
+  <button mat-button (click)="createMerchant()" class="createColor" >CREATE</button>
+</mat-card-actions>

@@ -1,0 +1,25 @@
+.mat-card-subtitle:not(:first-child) {
+    margin-top: 15px;
+}
+
+.mat-card-content> *{
+    margin-top: -13px;
+}
+.store-list-title{
+    width: 100%;
+    display: inline;
+    margin-right: 76.95%;
+}
+.merchant-overview-title{
+    width: 100%;
+    display: inline;
+   // margin-right: 65%;
+   justify-content: flex-start;
+}
+.stores-table{
+    width:100%;
+}
+#mat-card-custom-title{
+    display: flex;
+     justify-content: space-between;
+}

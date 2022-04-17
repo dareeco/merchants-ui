@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>
+  Update this store:
+</h1>
+<mat-dialog-content>
+  <mat-form-field appearance="fill" class="first-of-two">
+    <mat-label>Name</mat-label>
+    <input matInput [formControl]="nameFormControl">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="second-of-two">
+    <mat-label>Phone</mat-label>
+    <input matInput [formControl]="phoneFormControl">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="over-whole-form">
+    <mat-label>Description</mat-label>
+    <input matInput [formControl]="descriptionFormControl">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="first-of-two">
+    <mat-label>City</mat-label>
+    <input matInput [formControl]="cityFormControl">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="second-of-two">
+    <mat-label>Address</mat-label>
+    <input matInput [formControl]="addressFormControl">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="over-whole-form">
+    <mat-label>Email</mat-label>
+    <input matInput [formControl]="emailFormControl">
+  </mat-form-field>
+<mat-dialog-content>
+<mat-card-actions align="end">
+  <button mat-button mat-dialog-close class="backButton">BACK</button>
+  <button mat-button (click)="updateStore()" mat-dialog-close class="createColor">SAVE</button>
+</mat-card-actions>

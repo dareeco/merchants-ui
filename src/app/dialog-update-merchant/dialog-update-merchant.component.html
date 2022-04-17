@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>
+  Update this merchant:
+</h1>
+<mat-dialog-content>
+  <mat-form-field appearance="fill" class="first-of-two">
+    <mat-label>Telephone</mat-label>
+    <input matInput [formControl]="telephoneFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="second-of-two">
+    <mat-label>Merchant Name</mat-label>
+    <input matInput [formControl]="merchantNameFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="over-whole-form">
+    <mat-label>Full Name</mat-label>
+    <input matInput [formControl]="fullNameFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="first-of-two">
+    <mat-label>Address</mat-label>
+    <input matInput [formControl]="addressFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="second-of-two">
+    <mat-label>City</mat-label>
+    <input matInput [formControl]="cityFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="first-of-two">
+    <mat-label>E-mail</mat-label>
+    <input matInput [formControl]="emailFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="second-of-two">
+    <mat-label>Website</mat-label>
+    <input matInput [formControl]="websiteFormControl">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="over-whole-form">
+    <mat-label>Account Number</mat-label>
+    <input matInput [formControl]="accountNumberFormControl">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-card-actions align="end">
+  <button mat-button mat-dialog-close class="backButton">BACK</button>
+  <button mat-button (click)="updateMerchant()" mat-dialog-close class="createColor">SAVE</button>
+</mat-card-actions>

@@ -1,0 +1,103 @@
+<mat-toolbar class="fixed-header">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Merchants overview</span>
+  <span class="example-spacer"></span>
+
+</mat-toolbar>
+<mat-card class="example-card">
+  <mat-card-title id="mat-card-custom-title" >
+    <h1 class="merchant-overview-title">{{merchant?.fullName}} ({{merchant?.merchantCode}})</h1>
+    <button mat-icon-button [matMenuTriggerFor]="menu"   mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon aria-hidden="false"  >more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openDialog(merchant?.merchantCode)">
+        <mat-icon >lightbulb</mat-icon>
+        <span >Update Merchant</span>
+      </button>
+      
+      <button mat-menu-item  (click)="openAddStore(merchant?.merchantCode)">
+        <mat-icon>add_container</mat-icon>
+        <span>Add store</span>  
+      </button> 
+      
+    </mat-menu>
+     
+      
+
+  </mat-card-title>
+
+  <mat-card-subtitle>{{merchant?.merchantName}} </mat-card-subtitle>
+  <mat-card-content>
+    <p class="elementi-kartica">{{merchant?.address}} | {{merchant?.city}}</p>
+    <p>{{merchant?.telephone}} </p>
+    <p>{{merchant?.email}} </p>
+    <p>{{merchant?.website}} </p>
+    <p>{{merchant?.accountNumber}}</p>
+
+
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <!--<button mat-button>Like</button>
+    <button mat-button>SHARE</button> Ne ti trebat tuka tuka kje e merchant overview-->
+  </mat-card-actions>
+
+</mat-card>
+
+<!--Stores list below-->
+<mat-card style=" margin-top:3%;width:512px;">
+  
+  <mat-card-title>
+    <mat-card-title>
+      <h1 class="store-list-title">Store list</h1>
+      <mat-icon aria-hidden="false">more_vert</mat-icon>
+    </mat-card-title>
+  </mat-card-title>
+
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="stores-table mat-elevation-z0">
+      <!--z8,z7,z6 is the shadow we get on this element, we don't want shadow-->
+      <!-- Merchant Code Column -->
+      <ng-container matColumnDef="storeCode">
+        <th mat-header-cell *matHeaderCellDef> Store Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.storeCode}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <!-- Full Name Column -->
+      <ng-container matColumnDef="merchantCode">
+        <th mat-header-cell *matHeaderCellDef> Merchant Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.merchantCode}} </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef > Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button aria-label="Example icon button with a home icon">
+            <mat-icon class="material-icons-custom" (click)="openStoreOverview(element.merchantCode, element.storeCode)">info</mat-icon>
+          </button>
+          <button mat-icon-button aria-label="Example icon button with a home icon">
+            <mat-icon class="material-icons-custom" (click)="openStoreDialog(element.merchantCode, element.storeCode)">lightbulb</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteDetails(element.merchantCode, element.storeCode)"
+            aria-label="Example icon button with a home icon">
+            <mat-icon class="material-icons-custom">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+  </mat-card-content>
+</mat-card>

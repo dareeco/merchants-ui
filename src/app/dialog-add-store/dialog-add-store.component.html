@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>
+  Create Store
+</h1>
+<mat-dialog-content>
+  
+    <mat-form-field appearance="fill" class="first-of-two">
+      <mat-label>Store Code</mat-label>
+      <input [formControl]="storeCodeFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="second-of-two">
+      <mat-label>Phone</mat-label>
+      <input [formControl]="phoneFormControl" matInput>
+    </mat-form-field>
+    <br>
+    <small *ngIf="storeCodeFormControl.invalid && storeCodeFormControl.touched" class="dangerColor">Store Code is required!</small>
+    <mat-form-field appearance="fill" class="over-whole-form">
+      <mat-label>Name</mat-label>
+      <input [formControl]="nameFormControl" matInput>
+    </mat-form-field>
+    <br>
+    <small *ngIf="nameFormControl.invalid && nameFormControl.touched" class="dangerColor">Name for store is required!</small>
+    <mat-form-field appearance="fill" class="over-whole-form">
+      <mat-label>Description </mat-label>
+      <input [formControl]="descriptionFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="first-of-two">
+      <mat-label>Address</mat-label>
+      <input [formControl]="addressFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="second-of-two">
+      <mat-label>City</mat-label>
+      <input [formControl]="cityFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="first-of-two">
+      <mat-label>Email</mat-label>
+      <input [formControl]="emailFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="second-of-two">
+      <mat-label>Website</mat-label>
+      <input [formControl]="websiteFormControl" matInput>
+    </mat-form-field>
+    <mat-form-field  appearance="fill" class="over-whole-form">
+      <mat-label>Merchant Code*</mat-label>
+      <input  matInput [formControl]="merchantCodeFormControl" [readonly]="true" >
+    </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-card-actions align="end">
+  <button mat-button mat-dialog-close class="backButton">CLOSE</button> 
+  <button mat-button (click)="createStore()" class="createColor">CREATE</button>
+</mat-card-actions>

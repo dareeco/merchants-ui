@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.table-wrapper{
+   // margin-top:20%;
+    margin: 75px auto;
+    width:1024px;
+    display: block;
+}
+.over-whole-form{
+    width: 95%;
+}
+.first-of-two{
+    margin-right: 25px;
+     width:55%;
+}
+.second-of-two{
+    width:35%;
+}
+.createColor{
+    color:#00A5F3;
+}
+.createColor:hover{
+    background-color:#00A5F3;
+    color:white;
+}
+.dangerColor{
+    color:red;
+    margin-top:0;  
+}
+.backButton:hover{
+    background-color: red;
+    color: aliceblue;
+}
+.material-icons-custom { 
+    color:#00A5F3; 
+    
+}
+.fixed-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100% !important;
+    background-color: #00A5F3;
+    color:white;
+}
+
